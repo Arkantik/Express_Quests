@@ -23,7 +23,7 @@ const usersHandlers = require("./usersHandlers");
 app.get("/api/users", usersHandlers.getUsers);
 app.get("/api/users/:id", usersHandlers.getUsersById);
 
-app.post("/api/users", usersHandlers.postUsers);
+app.post("/api/users", usersHandlers.postUser);
 
 app.listen(port, (err) => {
 	if (err) {

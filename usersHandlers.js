@@ -30,7 +30,7 @@ const getUsersById = (req, res) => {
 		});
 };
 
-const postUsers = (req, res) => {
+const postUser = (req, res) => {
 	const { firstname, lastname, email, city, language } = req.body;
 
 	database
@@ -51,5 +51,5 @@ const postUsers = (req, res) => {
 module.exports = {
 	getUsers,
 	getUsersById,
-	postUsers,
+	postUser,
 };
