@@ -9,16 +9,16 @@ const getUsers = (req, res) => {
 		sqlValues.push(req.query.language);
 
 		if (req.query.city != null) {
-			sql += " and city <= ?";
+			sql += " and city = ?";
 			sqlValues.push(req.query.city);
 		}
 	} else if (req.query.city != null) {
-		sql += " where city <= ?";
+		sql += " where city = ?";
 		sqlValues.push(req.query.city);
 	}
 
 	database
-		.query("select * from users")
+		.query(sql, sqlValues)
 		.then(([users]) => {
 			res.json(users);
 		})
